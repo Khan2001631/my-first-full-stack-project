@@ -14,5 +14,12 @@ app.use(express.urlencoded({extended: true, limit: '16kb'})); // Middleware to p
 app.use(express.static('public'));   // Middleware to serve static files in public folder such as favicons, pdf, images etc
 app.use(cookieParser());
 
+// Rotutes Import
+
+import userRouter from './routes/user.routes.js'
+
+// Routes Declaration
+app.use('/api/v1/users', userRouter)
+
 
 export {app}
